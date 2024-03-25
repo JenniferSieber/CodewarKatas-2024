@@ -1,3 +1,60 @@
+//      6kyu
+
+function solution(number) {
+  if (number < 0) return 0
+  const nums = []
+  for (let i = 0; i < number; i++) {
+    if (i % 3 == 0 || i % 5 == 0) {
+      nums.push(i)
+    }
+  }
+  return nums.reduce((ttl, cv) => ttl + cv, 0)
+}
+
+console.log(solution(-100))
+console.log(solution(100))
+
+//      8kyu
+function evenOrOdd(number) {
+  return number % 2 === 0 ? "Even" : "Odd"
+}
+
+console.log(evenOrOdd(2))
+console.log(evenOrOdd(33))
+
+//       decimal to bit
+function decimalToBinary(decimal) {
+  let binary = '';
+  while (decimal > 0) {
+      binary = (decimal % 2) + binary;
+      decimal = Math.floor(decimal / 2);
+  }
+  return binary || '0'; // return '0' if input is 0
+}
+//     Example usage
+console.log(decimalToBinary(1234)); // Output: '10011010010'
+
+//     6kyu
+var countBits = (n) => {
+  let binary = ''
+  while (n > 0) {
+      binary = (n % 2) + binary
+      n = Math.floor(n / 2)
+  }
+  let str = binary || '0'
+  return str.split('').reduce((a,b) => Number(a) + Number(b), 0)
+}
+
+console.log(countBits('1234'))
+
+//     6kyu
+function alphabetPosition(text) {
+ let result = text.replace(/[^a-z]/gi, '').toLowerCase().split('').map(l => l = l.charCodeAt(0) - 96)
+ return result.filter(a => a > 0 && a < 27).join(' ')
+}
+
+console.log(alphabetPosition("The sunset sets at twelve o' clock."))
+
 //      7kyu strings
 function getCount(str) {
   const count = str.match(/[aeiou]/gi)
