@@ -1,5 +1,27 @@
-//      6kyu
+//      7kyu
+const accum = s => s.split('').map((c,i) => (c.toUpperCase() + c.toLowerCase().repeat(i))).join('-')
+console.log(accum('abcd'))
 
+//      6kyu
+function towerBuilder(nFloors) {
+  const tower = [];
+  for (let i = 0; i < nFloors; i++) {
+    tower.push(" ".repeat(nFloors - i - 1)
+             + "*".repeat((i * 2) + 1)
+             + " ".repeat(nFloors - i - 1));
+  }
+  return tower;
+}
+console.log(towerBuilder(5))
+
+//      7kyu
+const solution1 = (str, ending) => str.endsWith(ending);
+console.log(solution1('abc', 'bc'))
+console.log(solution1('abc', 'z'))
+
+
+
+//      6kyu
 function solution(number) {
   if (number < 0) return 0
   const nums = []
