@@ -1,3 +1,56 @@
+// 6kyu
+function palindromization(element, n){
+  if(element == '' || n < 2) return 'Error!';
+  return element.repeat(n).slice(0, Math.floor(n/2)) + element.repeat(n).slice(0, Math.ceil(n/2)).split('').reverse().join('');
+}
+console.log(palindromization('123', 2))
+console.log(palindromization('123', 5))
+console.log(palindromization('', 2))
+console.log(palindromization('123', 1))
+
+// 7kyu
+function convertPalindromes(numbers) {
+  return numbers.map(str => {
+    str = str.toString();
+    let rev = str.split('').reverse().join('');
+    return str == rev ? 1 : 0;
+  });
+};
+
+console.log(convertPalindromes([101, 2, 85, 33, 14014]))
+console.log(convertPalindromes([45, 21, 303, 56]))
+
+//  6kyu
+function wordMeshLong(arr) {
+  // initialize empty string
+  let result = ''
+  // loop through each word of array, except the last one -comparing each word with next one.
+  for (let i = 0; i < arr.length - 1; i++) {
+    // concatenate the current word with next word with space,
+    // use .match() with REGEX to test if theres repeating substring
+    // `\1` to first captured group `(.+)` 
+    // if truthy, will contain array where test[1] is the repeating substring, falsy = null
+    let test = (arr[i] + ' ' + arr[i+1]).match(/(.+) \1/)
+    // if falsy return failed to mesh
+    if (!test) return 'failed to mesh'
+    // if truthy concate to the result string
+    result += test[1]
+  }
+  // return result
+  return result
+}
+console.log(wordMeshLong(["allow", "lowering", "ringmaster", "terror"]))
+console.log(wordMeshLong(["kingdom", "dominator", "notorious", "usual", "allegory"]))
+
+// Shortened version:
+function wordMesh(arr){
+  const meshed = arr.join` `.match(/(\w+)(?= \1)/g);
+  return meshed.length == arr.length - 1 ? meshed.join`` : 'failed to mesh';
+}
+
+console.log(wordMesh(["allow", "lowering", "ringmaster", "terror"]))
+console.log(wordMesh(["kingdom", "dominator", "notorious", "usual", "allegory"]))
+
 //      7kyu
 const accum = s => s.split('').map((c,i) => (c.toUpperCase() + c.toLowerCase().repeat(i))).join('-')
 console.log(accum('abcd'))
