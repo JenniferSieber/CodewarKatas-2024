@@ -1,7 +1,11 @@
 // 6kyu
 function palindromization(element, n){
-  if(element == '' || n < 2) return 'Error!';
-  return element.repeat(n).slice(0, Math.floor(n/2)) + element.repeat(n).slice(0, Math.ceil(n/2)).split('').reverse().join('');
+  if (element == '' || n < 2) return 'Error!';
+  return element
+    .repeat(n).slice(0, Math.floor(n/2)) + element.repeat(n).slice(0, Math.ceil(n/2))
+    .split('')
+    .reverse()
+    .join('');
 }
 console.log(palindromization('123', 2))
 console.log(palindromization('123', 5))
