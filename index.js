@@ -1,4 +1,53 @@
 // 6kyu
+const inArray = (arr1, arr2) => arr1.filter(a1 => arr2.find(a2 => a2.match(a1))).sort();
+console.log(inArray(["arp", "live", "strong"], ["lively", "alive", "harp", "sharp", "armstrong"]))
+
+// 6kyu
+function wave(str) {
+  let result = []
+  str = str.toLowerCase()
+  for (let i = 0; i < str.length; i++) {
+   let copy = str.split('')
+   if (copy[i] !== ' ') {
+    copy[i] = copy[i].toUpperCase()
+    result.push(copy.join(''))
+   } 
+  }
+  return result
+}
+console.log(wave('hello'))
+
+// 6kyu
+const encryptThisBruteForce = (text) => {
+  let textArr = text.split(' ')
+  let result = textArr.map(word => {
+    let first = word.charCodeAt(0)
+    let second = word.slice(1,2)
+    let body = word.slice(2, -1)
+    let last = word.slice(-1)
+   return `${first}${last}${body}${second}`
+  })
+  return result.join(' ')
+}
+
+// with REGEX:
+// `/(^\w)(\w)(\w*)(\w$)/`  
+// group `1` matches first word
+// group `2` matches the second word char
+// group `3` matches zero or more chars after group 2
+// group `4` matches last word char at end of the word
+const encryptThis = text => text
+  .split(' ')
+  .map(word => word
+    .replace(/(^\w)(\w)(\w*)(\w$)/, `$1$4$3$2`)
+    .replace(/^\w/, word.charCodeAt(0)))
+  .join(' ');
+
+  console.log(encryptThis('Hello')) // "72olle"
+  console.log(encryptThis('good')) // "103doo"
+  console.log(encryptThis('hello world')) // "104olle 119drlo"
+
+// 6kyu
 function palindromization(element, n){
   if (element == '' || n < 2) return 'Error!';
   return element
