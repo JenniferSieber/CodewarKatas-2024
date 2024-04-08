@@ -1,3 +1,36 @@
+// 7kyu
+const spacify = str => str.split('').join(' ')
+console.log(spacify('hello world'))
+
+// 8kyu  1 Imperial Gallon = 4.54609188 litres & 1 Mile = 1.609344 kilometres
+function converter (mpg) {
+  //code to convert miles per imperial gallon to kilometers per liter
+  let kilometres = (mpg * 1.609344)/4.54609188
+  return Number(kilometres.toFixed(2))
+}
+console.log(converter(10))
+
+// 8kyu for loop ad ES6 operators
+// function monkeyCount(n) {
+//   const monkeys = []
+//   for(let i = 1; i <= n; i++) {
+//     monkeys.push(i)
+//   }
+//   return monkeys
+// }
+function monkeyCount(n) {
+  return [...Array(n).keys()].map(a => a+1)
+  }
+  console.log(monkeyCount(1))
+  console.log(monkeyCount(10))
+
+// 8kyu
+function formatMoney(amt) {
+  return `$${amt.toFixed(2)}`
+}
+console.log(formatMoney(3))
+console.log(formatMoney(3.1))
+
 // 6kyu
 const inArray = (arr1, arr2) => arr1.filter(a1 => arr2.find(a2 => a2.match(a1))).sort();
 console.log(inArray(["arp", "live", "strong"], ["lively", "alive", "harp", "sharp", "armstrong"]))
