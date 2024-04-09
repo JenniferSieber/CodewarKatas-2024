@@ -1,3 +1,24 @@
+// 7kyu 
+const rowSumOddNumbers = n => Math.pow(n, 3)
+console.log(rowSumOddNumbers(1))
+console.log(rowSumOddNumbers(42))
+
+// 8kyu 
+const well = x => {
+  let counts = x.filter(el => el == 'good').length
+  return counts < 1 ? 'Fail!' :
+    counts < 3 ? 'Publish!' : 'I smell a series!'
+}
+
+console.log(well(['bad', 'bad', 'bad']))
+console.log(well(['good', 'bad', 'bad', 'bad', 'bad']))
+console.log(well(['good', 'bad', 'bad', 'bad', 'bad', 'good', 'bad', 'bad', 'good']))
+
+// 8kyu
+const maps = x => x.map(n => n + n)
+console.log(maps([1,2,3]))
+console.log(maps([11,12,13]))
+
 // 7kyu
 const spacify = str => str.split('').join(' ')
 console.log(spacify('hello world'))
