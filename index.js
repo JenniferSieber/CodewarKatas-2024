@@ -1,3 +1,29 @@
+// 7kyu
+const validName = arr => {
+  if(arr.length < 1) return "You must test at least one name.";
+  else if (arr.length < 2) return "Congratulations, you can choose any name you like!";
+ 
+  for (let i = 1; i < arr.length; i++) {
+    if (!(arr[i-1].toUpperCase().endsWith(arr[i].toUpperCase().charAt(0)))) {
+      return "Back to the drawing board, your baby names are not compatible.";
+    }
+    return "Congratulations, your baby names are compatible!" ; 
+  }
+}
+
+console.log(validName(["Peaches","Theodora","Zpple", "Harlow", "Willow", "Weston", "Nala", "Atlas", "Silas", "Sundance", "Esmeralda", "Angel", "Lily-Rose", "Rebel", "Zourdes"]))
+console.log(validName(["George", "Charlotte"]))
+console.log(validName(["Peaches", "Saint", "Theodora", "Ava", "Apple", "Egypt", "Tallulah", "Harlow", "Willow", "Weston", "Nala", "Atlas", "Silas", "Sundance", "Esmeralda", "Angel", "Lily-Rose", "Ever", "Rebel", "Lourdes"]))
+console.log(validName([]))
+console.log(validName(["Jaden"]))
+console.log(validName(["Cruz", "Zuma"]))
+
+// 8kyu
+const ArrowFunc = arr => arr.map(num => String.fromCharCode(num)).join('');
+console.log(ArrowFunc([84,101,115,116]))
+console.log(ArrowFunc([70,85,83,32,82,79,72,32,68,65,72]))
+
+
 // 7kyu 
 const rowSumOddNumbers = n => Math.pow(n, 3)
 console.log(rowSumOddNumbers(1))
