@@ -1,3 +1,36 @@
+// 6kyu
+function toCamelCase(str){
+  return str.replace(/[-_](.)/g, (_, c) => c.toUpperCase());
+}
+
+console.log(toCamelCase('The-Stealth-Warrior'))
+
+//7kyu
+function divisors(integer) {
+  let arr = []
+  for (let i = 2; i < integer; i++) {
+    if (integer % i == 0 ) {
+      arr.push(i)
+    }
+  }
+  return arr.length == 0 ? `${integer} is prime` : arr;
+}
+
+console.log(divisors(15))
+console.log(divisors(25))
+console.log(divisors(13))
+console.log(divisors(12))
+
+// 6kyu
+function expandedForm(num) {
+  const n = num.toString()
+  const arr = n.split('').reverse()
+  return arr.map((el, i) => el * Math.pow(10, i)).filter(el => el > 0).reverse().join(' + ')
+}
+
+console.log(expandedForm(12))
+console.log(expandedForm(70304))
+
 // 7kyu
 const validName = arr => {
   if(arr.length < 1) return "You must test at least one name.";
