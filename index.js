@@ -1,6 +1,6 @@
 // 6kyu
 function toCamelCase(str){
-  return str.replace(/[-_](.)/g, (_, c) => c.toUpperCase());
+  return str.replace(/[-_](.)/g, (_, c) => c.toUpperCase())
 }
 
 console.log(toCamelCase('The-Stealth-Warrior'))
@@ -13,7 +13,7 @@ function divisors(integer) {
       arr.push(i)
     }
   }
-  return arr.length == 0 ? `${integer} is prime` : arr;
+  return arr.length == 0 ? `${integer} is prime` : arr
 }
 
 console.log(divisors(15))
@@ -33,14 +33,14 @@ console.log(expandedForm(70304))
 
 // 7kyu
 const validName = arr => {
-  if(arr.length < 1) return "You must test at least one name.";
-  else if (arr.length < 2) return "Congratulations, you can choose any name you like!";
+  if(arr.length < 1) return "You must test at least one name."
+  else if (arr.length < 2) return "Congratulations, you can choose any name you like!"
  
   for (let i = 1; i < arr.length; i++) {
     if (!(arr[i-1].toUpperCase().endsWith(arr[i].toUpperCase().charAt(0)))) {
-      return "Back to the drawing board, your baby names are not compatible.";
+      return "Back to the drawing board, your baby names are not compatible."
     }
-    return "Congratulations, your baby names are compatible!" ; 
+    return "Congratulations, your baby names are compatible!" 
   }
 }
 
@@ -52,7 +52,7 @@ console.log(validName(["Jaden"]))
 console.log(validName(["Cruz", "Zuma"]))
 
 // 8kyu
-const ArrowFunc = arr => arr.map(num => String.fromCharCode(num)).join('');
+const ArrowFunc = arr => arr.map(num => String.fromCharCode(num)).join('')
 console.log(ArrowFunc([84,101,115,116]))
 console.log(ArrowFunc([70,85,83,32,82,79,72,32,68,65,72]))
 
@@ -99,7 +99,7 @@ console.log(converter(10))
 //   return monkeys
 // }
 function monkeyCount(n) {
-  return [...Array(n).keys()].map(a => a+1)
+  return [...Array(n).keys()].map(a => a + 1)
   }
   console.log(monkeyCount(1))
   console.log(monkeyCount(10))
@@ -162,7 +162,7 @@ const encryptThis = text => text
 
 // 6kyu
 function palindromization(element, n){
-  if (element == '' || n < 2) return 'Error!';
+  if (element == '' || n < 2) return 'Error!'
   return element
     .repeat(n).slice(0, Math.floor(n/2)) + element.repeat(n).slice(0, Math.ceil(n/2))
     .split('')
@@ -177,9 +177,9 @@ console.log(palindromization('123', 1))
 // 7kyu
 function convertPalindromes(numbers) {
   return numbers.map(str => {
-    str = str.toString();
-    let rev = str.split('').reverse().join('');
-    return str == rev ? 1 : 0;
+    str = str.toString()
+    let rev = str.split('').reverse().join('')
+    return str == rev ? 1 : 0
   });
 };
 
@@ -211,7 +211,7 @@ console.log(wordMeshLong(["kingdom", "dominator", "notorious", "usual", "allegor
 // Shortened version:
 function wordMesh(arr){
   const meshed = arr.join` `.match(/(\w+)(?= \1)/g);
-  return meshed.length == arr.length - 1 ? meshed.join`` : 'failed to mesh';
+  return meshed.length == arr.length - 1 ? meshed.join`` : 'failed to mesh'
 }
 
 console.log(wordMesh(["allow", "lowering", "ringmaster", "terror"]))
@@ -227,14 +227,14 @@ function towerBuilder(nFloors) {
   for (let i = 0; i < nFloors; i++) {
     tower.push(" ".repeat(nFloors - i - 1)
              + "*".repeat((i * 2) + 1)
-             + " ".repeat(nFloors - i - 1));
+             + " ".repeat(nFloors - i - 1))
   }
-  return tower;
+  return tower
 }
 console.log(towerBuilder(5))
 
 //      7kyu
-const solution1 = (str, ending) => str.endsWith(ending);
+const solution1 = (str, ending) => str.endsWith(ending)
 console.log(solution1('abc', 'bc'))
 console.log(solution1('abc', 'z'))
 
@@ -299,7 +299,7 @@ console.log(alphabetPosition("The sunset sets at twelve o' clock."))
 //      7kyu strings
 function getCount(str) {
   const count = str.match(/[aeiou]/gi)
-  return count == null ? 0 : count.length;
+  return count == null ? 0 : count.length
 }
 console.log(getCount('alphabet'))
 console.log(getCount('vowels'))
