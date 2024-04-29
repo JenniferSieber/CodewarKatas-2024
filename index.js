@@ -1,3 +1,52 @@
+// 6kyu 
+function longestRepetition(s) {
+  const lowercaseS = s.toLowerCase();
+  let lastChar = ''; 
+  let lastCount = 0; 
+  let result = [lastChar, lastCount];
+  for (const char of lowercaseS) {
+    if (char == lastChar) {
+      lastCount++;
+    } else {
+      lastChar = char;
+      lastCount = 1;
+    }
+    
+    if (result[1] < lastCount) {
+      result = [lastChar, lastCount];
+    }
+  }
+  return result;
+}
+
+console.log(longestRepetition('aaaabb'));
+console.log(longestRepetition('dabcDddd'));
+
+// 7
+function validateWord(s) {
+  s = s.toLowerCase();
+  return s.length % new Set(s).size == 0;
+}
+
+console.log(validateWord("abcabc"));
+console.log(validateWord("abc:abc"));
+
+// 7
+function removeConsecutiveDuplicates(string) {
+  let arr = string.toLowerCase().split(' ');
+  let result = [];
+  for (let i = 0; i < arr.length; i++) {
+    let word = arr[i];
+    if (!(word === arr[i + 1])) {
+      result.push(word);
+    }
+  }
+  return result.join(' ');
+}
+
+console.log(removeConsecutiveDuplicates("alpha beta beta gamma gamma gamma delta alpha beta beta gamma gamma gamma delta"));
+console.log(removeConsecutiveDuplicates("alpha alpha alpha alpha"));
+
 // 6kyu
 function toCamelCase(str){
   return str.replace(/[-_](.)/g, (_, c) => c.toUpperCase())
