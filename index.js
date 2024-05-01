@@ -22,7 +22,7 @@ function longestRepetition(s) {
 console.log(longestRepetition('aaaabb'))
 console.log(longestRepetition('dabcDddd'))
 
-// 7
+// 7kyu
 function validateWord(s) {
   s = s.toLowerCase()
   return s.length % new Set(s).size == 0
@@ -31,7 +31,7 @@ function validateWord(s) {
 console.log(validateWord("abcabc"))
 console.log(validateWord("abc:abc"))
 
-// 7
+// 7kyu
 function removeConsecutiveDuplicates(string) {
   let arr = string.toLowerCase().split(' ')
   let result = []
@@ -105,7 +105,6 @@ const ArrowFunc = arr => arr.map(num => String.fromCharCode(num)).join('')
 console.log(ArrowFunc([84,101,115,116]))
 console.log(ArrowFunc([70,85,83,32,82,79,72,32,68,65,72]))
 
-
 // 7kyu 
 const rowSumOddNumbers = n => Math.pow(n, 3)
 console.log(rowSumOddNumbers(1))
@@ -139,14 +138,6 @@ function converter (mpg) {
 }
 console.log(converter(10))
 
-// 8kyu for loop ad ES6 operators
-// function monkeyCount(n) {
-//   const monkeys = []
-//   for(let i = 1; i <= n; i++) {
-//     monkeys.push(i)
-//   }
-//   return monkeys
-// }
 function monkeyCount(n) {
   return [...Array(n).keys()].map(a => a + 1)
   }
@@ -216,7 +207,7 @@ function palindromization(element, n){
     .repeat(n).slice(0, Math.floor(n/2)) + element.repeat(n).slice(0, Math.ceil(n/2))
     .split('')
     .reverse()
-    .join('');
+    .join('')
 }
 console.log(palindromization('123', 2))
 console.log(palindromization('123', 5))
@@ -229,8 +220,8 @@ function convertPalindromes(numbers) {
     str = str.toString()
     let rev = str.split('').reverse().join('')
     return str == rev ? 1 : 0
-  });
-};
+  })
+}
 
 console.log(convertPalindromes([101, 2, 85, 33, 14014]))
 console.log(convertPalindromes([45, 21, 303, 56]))
@@ -287,8 +278,6 @@ const solution1 = (str, ending) => str.endsWith(ending)
 console.log(solution1('abc', 'bc'))
 console.log(solution1('abc', 'z'))
 
-
-
 //      6kyu
 function solution(number) {
   if (number < 0) return 0
@@ -316,13 +305,13 @@ console.log(evenOrOdd(33))
 function decimalToBinary(decimal) {
   let binary = '';
   while (decimal > 0) {
-      binary = (decimal % 2) + binary;
-      decimal = Math.floor(decimal / 2);
+      binary = (decimal % 2) + binary
+      decimal = Math.floor(decimal / 2)
   }
   return binary || '0'; // return '0' if input is 0
 }
 //     Example usage
-console.log(decimalToBinary(1234)); // Output: '10011010010'
+console.log(decimalToBinary(1234)) // Output: '10011010010'
 
 //     6kyu
 var countBits = (n) => {
@@ -345,7 +334,7 @@ function alphabetPosition(text) {
 
 console.log(alphabetPosition("The sunset sets at twelve o' clock."))
 
-//      7kyu strings
+//      7kyu
 function getCount(str) {
   const count = str.match(/[aeiou]/gi)
   return count == null ? 0 : count.length
@@ -367,7 +356,7 @@ function disemvowel(str) {
 
 console.log(disemvowel('This website is for losers LOL!'))
 
-//      6kyu strings
+//      6kyu
 function spinWords(str){
   return str.split(' ').map(word => {
     if (word.length > 4) {
@@ -382,7 +371,7 @@ console.log(spinWords('Hey fellow warriors'))
 console.log(spinWords('This is a test'))
 console.log(spinWords('This is another test'))
 
-//      6kyu strings
+//      6kyu
 function createPhoneNumber(arr){
   const a = []
   const b = []
@@ -402,12 +391,12 @@ function createPhoneNumber(arr){
 console.log(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]))
 console.log(createPhoneNumber([1, 1, 1, 1, 1, 1, 1, 1, 1, 1]))
 
-//      7kyu strings
+//      7kyu
 function highAndLow(numbers){
   const nums = numbers.split(' ').map(num => Number(num)).sort((a,b) => a - b)
   return `${nums[nums.length -1]} ${nums[0]}`
 }
+
 console.log(highAndLow('1 2 3 4 5'))
 console.log(highAndLow('1 2 -3 4 5'))
 console.log(highAndLow('1 9 3 4 -5'))
-
