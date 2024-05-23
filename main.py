@@ -9,6 +9,8 @@ def is_even(i):
 print(is_even(3))
 print(is_even(8))
 
+
+
 #    div_by(num, divisor)
 print('\n div_by')
 def div_by(n, d):
@@ -23,6 +25,7 @@ def div_by(n, d):
 print(div_by(10,3))     # print False
 print(div_by(0,3))     # print False
 print(div_by(195,13))   # returns True
+
 
 
 #    is_even_range()
