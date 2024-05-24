@@ -1,3 +1,5 @@
+
+
 // 6kyu
 const test = s => Array.from( s, (_,i) => /\s/.test(s[i]) ? null : s.slice(0,i) + s[i].toUpperCase() + s.slice(i+1) ).filter(Boolean);
 
