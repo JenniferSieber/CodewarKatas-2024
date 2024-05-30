@@ -1,8 +1,5 @@
-
-
 // 6kyu
 const test = s => Array.from( s, (_,i) => /\s/.test(s[i]) ? null : s.slice(0,i) + s[i].toUpperCase() + s.slice(i+1) ).filter(Boolean);
-
 console.log(test('hello'))
 console.log(test('codewars'))
 console.log(test('WAVE'))
@@ -28,7 +25,6 @@ function longestRepetition(s) {
   }
   return result
 }
-
 console.log(longestRepetition('aaaabb'))
 console.log(longestRepetition('dabcDddd'))
 
@@ -37,7 +33,6 @@ function validateWord(s) {
   s = s.toLowerCase()
   return s.length % new Set(s).size == 0
 }
-
 console.log(validateWord("abcabc"))
 console.log(validateWord("abc:abc"))
 
@@ -53,7 +48,6 @@ function removeConsecutiveDuplicates(string) {
   }
   return result.join(' ')
 }
-
 console.log(removeConsecutiveDuplicates("alpha beta beta gamma gamma gamma delta alpha beta beta gamma gamma gamma delta"))
 console.log(removeConsecutiveDuplicates("alpha alpha alpha alpha"))
 
@@ -61,7 +55,6 @@ console.log(removeConsecutiveDuplicates("alpha alpha alpha alpha"))
 function toCamelCase(str){
   return str.replace(/[-_](.)/g, (_, c) => c.toUpperCase())
 }
-
 console.log(toCamelCase('The-Stealth-Warrior'))
 
 //7kyu
@@ -74,7 +67,6 @@ function divisors(integer) {
   }
   return arr.length == 0 ? `${integer} is prime` : arr
 }
-
 console.log(divisors(15))
 console.log(divisors(25))
 console.log(divisors(13))
@@ -86,7 +78,6 @@ function expandedForm(num) {
   const arr = n.split('').reverse()
   return arr.map((el, i) => el * Math.pow(10, i)).filter(el => el > 0).reverse().join(' + ')
 }
-
 console.log(expandedForm(12))
 console.log(expandedForm(70304))
 
@@ -102,7 +93,6 @@ const validName = arr => {
     return "Congratulations, your baby names are compatible!" 
   }
 }
-
 console.log(validName(["Peaches","Theodora","Zpple", "Harlow", "Willow", "Weston", "Nala", "Atlas", "Silas", "Sundance", "Esmeralda", "Angel", "Lily-Rose", "Rebel", "Zourdes"]))
 console.log(validName(["George", "Charlotte"]))
 console.log(validName(["Peaches", "Saint", "Theodora", "Ava", "Apple", "Egypt", "Tallulah", "Harlow", "Willow", "Weston", "Nala", "Atlas", "Silas", "Sundance", "Esmeralda", "Angel", "Lily-Rose", "Ever", "Rebel", "Lourdes"]))
@@ -126,7 +116,6 @@ const well = x => {
   return counts < 1 ? 'Fail!' :
     counts < 3 ? 'Publish!' : 'I smell a series!'
 }
-
 console.log(well(['bad', 'bad', 'bad']))
 console.log(well(['good', 'bad', 'bad', 'bad', 'bad']))
 console.log(well(['good', 'bad', 'bad', 'bad', 'bad', 'good', 'bad', 'bad', 'good']))
@@ -205,7 +194,6 @@ const encryptThis = text => text
     .replace(/(^\w)(\w)(\w*)(\w$)/, `$1$4$3$2`)
     .replace(/^\w/, word.charCodeAt(0)))
   .join(' ');
-
   console.log(encryptThis('Hello')) // "72olle"
   console.log(encryptThis('good')) // "103doo"
   console.log(encryptThis('hello world')) // "104olle 119drlo"
@@ -232,7 +220,6 @@ function convertPalindromes(numbers) {
     return str == rev ? 1 : 0
   })
 }
-
 console.log(convertPalindromes([101, 2, 85, 33, 14014]))
 console.log(convertPalindromes([45, 21, 303, 56]))
 
@@ -263,7 +250,6 @@ function wordMesh(arr){
   const meshed = arr.join` `.match(/(\w+)(?= \1)/g);
   return meshed.length == arr.length - 1 ? meshed.join`` : 'failed to mesh'
 }
-
 console.log(wordMesh(["allow", "lowering", "ringmaster", "terror"]))
 console.log(wordMesh(["kingdom", "dominator", "notorious", "usual", "allegory"]))
 
@@ -299,7 +285,6 @@ function solution(number) {
   }
   return nums.reduce((ttl, cv) => ttl + cv, 0)
 }
-
 console.log(solution(-100))
 console.log(solution(100))
 
@@ -307,7 +292,6 @@ console.log(solution(100))
 function evenOrOdd(number) {
   return number % 2 === 0 ? "Even" : "Odd"
 }
-
 console.log(evenOrOdd(2))
 console.log(evenOrOdd(33))
 
@@ -333,7 +317,6 @@ var countBits = (n) => {
   let str = binary || '0'
   return str.split('').reduce((a,b) => Number(a) + Number(b), 0)
 }
-
 console.log(countBits('1234'))
 
 //     6kyu
@@ -341,7 +324,6 @@ function alphabetPosition(text) {
  let result = text.replace(/[^a-z]/gi, '').toLowerCase().split('').map(l => l = l.charCodeAt(0) - 96)
  return result.filter(a => a > 0 && a < 27).join(' ')
 }
-
 console.log(alphabetPosition("The sunset sets at twelve o' clock."))
 
 //      7kyu
@@ -363,7 +345,6 @@ function disemvowel(str) {
   })
   return newStr.join('')
 }
-
 console.log(disemvowel('This website is for losers LOL!'))
 
 //      6kyu
@@ -376,7 +357,6 @@ function spinWords(str){
     }
   }).join(' ')
 }
-
 console.log(spinWords('Hey fellow warriors'))
 console.log(spinWords('This is a test'))
 console.log(spinWords('This is another test'))
@@ -397,7 +377,6 @@ function createPhoneNumber(arr){
   })
   return `(${a.join('')}) ${b.join('')}-${c.join('')}`
 }
-
 console.log(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]))
 console.log(createPhoneNumber([1, 1, 1, 1, 1, 1, 1, 1, 1, 1]))
 
@@ -406,7 +385,6 @@ function highAndLow(numbers){
   const nums = numbers.split(' ').map(num => Number(num)).sort((a,b) => a - b)
   return `${nums[nums.length -1]} ${nums[0]}`
 }
-
 console.log(highAndLow('1 2 3 4 5'))
 console.log(highAndLow('1 2 -3 4 5'))
 console.log(highAndLow('1 9 3 4 -5'))
