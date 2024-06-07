@@ -150,11 +150,12 @@ function formatMoney(amt) {
 console.log(formatMoney(3))
 console.log(formatMoney(3.1))
 
-// 6kyu
+//    6kyu
 const inArray = (arr1, arr2) => arr1.filter(a1 => arr2.find(a2 => a2.match(a1))).sort();
+
 console.log(inArray(["arp", "live", "strong"], ["lively", "alive", "harp", "sharp", "armstrong"]))
 
-// 6kyu
+//    6kyu
 function wave(str) {
   let result = []
   str = str.toLowerCase()
@@ -167,9 +168,10 @@ function wave(str) {
   }
   return result
 }
+
 console.log(wave('hello'))
 
-// 6kyu
+//        6kyu
 const encryptThisBruteForce = (text) => {
   let textArr = text.split(' ')
   let result = textArr.map(word => {
@@ -194,11 +196,12 @@ const encryptThis = text => text
     .replace(/(^\w)(\w)(\w*)(\w$)/, `$1$4$3$2`)
     .replace(/^\w/, word.charCodeAt(0)))
   .join(' ');
+
   console.log(encryptThis('Hello')) // "72olle"
   console.log(encryptThis('good')) // "103doo"
   console.log(encryptThis('hello world')) // "104olle 119drlo"
 
-// 6kyu
+//       6kyu
 function palindromization(element, n){
   if (element == '' || n < 2) return 'Error!'
   return element
@@ -207,12 +210,13 @@ function palindromization(element, n){
     .reverse()
     .join('')
 }
+
 console.log(palindromization('123', 2))
 console.log(palindromization('123', 5))
 console.log(palindromization('', 2))
 console.log(palindromization('123', 1))
 
-// 7kyu
+//     7kyu
 function convertPalindromes(numbers) {
   return numbers.map(str => {
     str = str.toString()
@@ -220,10 +224,11 @@ function convertPalindromes(numbers) {
     return str == rev ? 1 : 0
   })
 }
+
 console.log(convertPalindromes([101, 2, 85, 33, 14014]))
 console.log(convertPalindromes([45, 21, 303, 56]))
 
-//  6kyu
+//     6kyu wordMesh 
 function wordMeshLong(arr) {
   // initialize empty string
   let result = ''
@@ -242,14 +247,16 @@ function wordMeshLong(arr) {
   // return result
   return result
 }
+
 console.log(wordMeshLong(["allow", "lowering", "ringmaster", "terror"]))
 console.log(wordMeshLong(["kingdom", "dominator", "notorious", "usual", "allegory"]))
 
-// Shortened version:
+// 6kyu wordMesh Shortened version:
 function wordMesh(arr){
   const meshed = arr.join` `.match(/(\w+)(?= \1)/g);
   return meshed.length == arr.length - 1 ? meshed.join`` : 'failed to mesh'
 }
+
 console.log(wordMesh(["allow", "lowering", "ringmaster", "terror"]))
 console.log(wordMesh(["kingdom", "dominator", "notorious", "usual", "allegory"]))
 
@@ -285,6 +292,7 @@ function solution(number) {
   }
   return nums.reduce((ttl, cv) => ttl + cv, 0)
 }
+
 console.log(solution(-100))
 console.log(solution(100))
 
@@ -292,10 +300,11 @@ console.log(solution(100))
 function evenOrOdd(number) {
   return number % 2 === 0 ? "Even" : "Odd"
 }
+
 console.log(evenOrOdd(2))
 console.log(evenOrOdd(33))
 
-//       decimal to bit
+//      6kyu   decimal to bit
 function decimalToBinary(decimal) {
   let binary = '';
   while (decimal > 0) {
@@ -304,7 +313,7 @@ function decimalToBinary(decimal) {
   }
   return binary || '0'; // return '0' if input is 0
 }
-//     Example usage
+
 console.log(decimalToBinary(1234)) // Output: '10011010010'
 
 //     6kyu
@@ -317,6 +326,7 @@ var countBits = (n) => {
   let str = binary || '0'
   return str.split('').reduce((a,b) => Number(a) + Number(b), 0)
 }
+
 console.log(countBits('1234'))
 
 //     6kyu
@@ -324,6 +334,7 @@ function alphabetPosition(text) {
  let result = text.replace(/[^a-z]/gi, '').toLowerCase().split('').map(l => l = l.charCodeAt(0) - 96)
  return result.filter(a => a > 0 && a < 27).join(' ')
 }
+
 console.log(alphabetPosition("The sunset sets at twelve o' clock."))
 
 //      7kyu
@@ -331,6 +342,7 @@ function getCount(str) {
   const count = str.match(/[aeiou]/gi)
   return count == null ? 0 : count.length
 }
+
 console.log(getCount('alphabet'))
 console.log(getCount('vowels'))
 console.log(getCount('o a kak ushakov lil vo kashu kakao'))
@@ -345,6 +357,7 @@ function disemvowel(str) {
   })
   return newStr.join('')
 }
+
 console.log(disemvowel('This website is for losers LOL!'))
 
 //      6kyu
@@ -357,6 +370,7 @@ function spinWords(str){
     }
   }).join(' ')
 }
+
 console.log(spinWords('Hey fellow warriors'))
 console.log(spinWords('This is a test'))
 console.log(spinWords('This is another test'))
@@ -377,6 +391,7 @@ function createPhoneNumber(arr){
   })
   return `(${a.join('')}) ${b.join('')}-${c.join('')}`
 }
+
 console.log(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]))
 console.log(createPhoneNumber([1, 1, 1, 1, 1, 1, 1, 1, 1, 1]))
 
@@ -385,6 +400,7 @@ function highAndLow(numbers){
   const nums = numbers.split(' ').map(num => Number(num)).sort((a,b) => a - b)
   return `${nums[nums.length -1]} ${nums[0]}`
 }
+
 console.log(highAndLow('1 2 3 4 5'))
 console.log(highAndLow('1 2 -3 4 5'))
 console.log(highAndLow('1 9 3 4 -5'))
